@@ -2,7 +2,7 @@
 defineProps({
     movies: {
         type: Array,
-        default: {}
+        require: true
     }
 })
 </script>
@@ -11,6 +11,6 @@ defineProps({
 
 </template>
  
-<style>
+<style >
 
 </style>
