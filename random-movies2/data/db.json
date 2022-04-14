@@ -118,5 +118,55 @@
       "synopsis": "Dr.Don Shirley is a African-American pianist who is about to embark on a concert tour in the Deep South in 1962. In need of a driver and protection, Shirley recruits Tony Lip. Despite their differences, the two men soon develop an unexpected bond while confronting racism and danger in an era of segregation.",
       "id": 17
     }
+  ],
+  "questions": [
+    {
+      "question": "ใครหล่อสุดใน 5 คนนี้",
+      "answer": 3,
+      "options": [
+        "แค่ชื่อก็หล่อแล้ว พรี่วาเลนไทน์",
+        "เฮ้ยๆ ต้องพรี่แชมป์สิค้าบบบ",
+        "ถึงจะผู้หญิงแต่ก็หล่อนะ ต้องพรี่ฟิล์ม",
+        "พรี่โอมสิค้าบ หล่อจนใจเจ็บ",
+        "อย่าๆๆ ต้องพรี่มายด์ดิ หน้าตาดีเหมือนพระเอกMV แถมแบกวิชานี้"
+      ],
+      "selected": null
+    },
+    {
+      "question": "สังกัดใดต่อไปนี้ไม่มีนักแข่งสัญชาติไทยอยู่เลย",
+      "answer": 1,
+      "options": ["MITH", "Peper Rex", "Full Sense", "Xerxia", "ไม่ถูกทุกข้อ"],
+      "selected": null
+    },
+    {
+      "question": "โปรเจ็คนี้นี้เป็นส่วนหนึ่งของวิชาใด?",
+      "answer": 0,
+      "options": ["INT203", "INT204", "INT206", "INT208", "INT210"],
+      "selected": null
+    },
+    {
+      "question": "นักร้องคน/วงไหนที่เป็นนักร้อง R&B",
+      "answer": 4,
+      "options": [
+        "Ariana Grande",
+        "BTS",
+        "BOWKYLION",
+        "Maroon 5",
+        "The Weeknd"
+      ],
+      "selected": null
+    },
+    {
+      "question": "ในวิชา INT203 อาจารย์มีชื่อว่าอะไร?",
+      "answer": 2,
+      "options": [
+        "อาจารย์สยาม",
+        "อาจารย์สุณิสา",
+        "อาจารย์อุมาพร",
+        "อาจารย์พิเชฏฐ์",
+        "อาจารย์กิตติพันธุ์"
+      ],
+      "selected": null
+    }
   ]
 }
