@@ -42,9 +42,9 @@ const NextQuestion = () => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" v-if="getCurrentQuestion">
     <h1>The Quiz</h1>
-    <section class="quiz" v-if="!quizCompleted">
+    <section class="quiz" v-if="!quizCompleted" >
       <div class="quiz-info">
         <span class="question">{{ getCurrentQuestion.question }}</span>
         <span class="score">Score {{ score }}/{{ questions.length }}</span>
