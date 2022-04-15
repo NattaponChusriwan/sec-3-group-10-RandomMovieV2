@@ -50,11 +50,11 @@
       "synopsis": "Dr.Don Shirley is a African-American pianist who is about to embark on a concert tour in the Deep South in 1962. In need of a driver and protection, Shirley recruits Tony Lip. Despite their differences, the two men soon develop an unexpected bond while confronting racism and danger in an era of segregation."
     },
     {
-      "id": 8,
       "name": "Inside Out",
       "genre": "Animation",
       "imgPath": "./images/008.jpg",
-      "synopsis": "The story of Inside Out centers on an girl named Riley Andersen moving to San Francisco and her five emotions Joy, Sadness, Fear, Disgust. and Anger trying to help her cope with her new life. The five emotions live in headquarters and control how Riley feels. When Joy and Sadness are accidentally kicked out of headquarters, they go on a wild journey to get back."
+      "synopsis": "The story of Inside Out centers on an girl named Riley Andersen moving to San Francisco and her five emotions Joy, Sadness, Fear, Disgust. and Anger trying to help her cope with her new life. The five emotions live in headquarters and control how Riley feels. When Joy and Sadness are accidentally kicked out of headquarters, they go on a wild journey to get back.",
+      "id": 8
     },
     {
       "id": 9,
@@ -113,7 +113,7 @@
       "synopsis": "The wreck was found in the North Atlantic. 1985 American explorer Brock Lowett. Dive down to explore the wreck of the ship to find precious treasure but found a line drawing image of a naked woman wearing necklace and pendant only The model in the painting is Rose and she tells everyone about the events."
     },
     {
-      "name": "เทพทาย",
+      "name": "เทพโคตร",
       "genre": "007",
       "synopsis": "Dr.Don Shirley is a African-American pianist who is about to embark on a concert tour in the Deep South in 1962. In need of a driver and protection, Shirley recruits Tony Lip. Despite their differences, the two men soon develop an unexpected bond while confronting racism and danger in an era of segregation.",
       "id": 17
@@ -135,13 +135,25 @@
     {
       "question": "สังกัดใดต่อไปนี้ไม่มีนักแข่งสัญชาติไทยอยู่เลย",
       "answer": 1,
-      "options": ["MITH", "Peper Rex", "Full Sense", "Xerxia", "ไม่ถูกทุกข้อ"],
+      "options": [
+        "MITH",
+        "Peper Rex",
+        "Full Sense",
+        "Xerxia",
+        "ไม่ถูกทุกข้อ"
+      ],
       "selected": null
     },
     {
       "question": "โปรเจ็คนี้นี้เป็นส่วนหนึ่งของวิชาใด?",
       "answer": 0,
-      "options": ["INT203", "INT204", "INT206", "INT208", "INT210"],
+      "options": [
+        "INT203",
+        "INT204",
+        "INT206",
+        "INT208",
+        "INT210"
+      ],
       "selected": null
     },
     {

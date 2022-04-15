@@ -4,6 +4,7 @@ import MovieList from '../components/BaseMovieList.vue';
 import AddEditMovie from '../components/AddEditMovie.vue';
 const movies = ref([])
 
+
 // GET
 const getMovies = async () => {
   const res = await fetch('http://localhost:5000/movies')
@@ -75,6 +76,7 @@ const updateMovie = async (editingMovie) => {
 
   closeForm()
 }
+
 </script>
  
 <template>

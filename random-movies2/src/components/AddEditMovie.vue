@@ -16,7 +16,7 @@ const newMovie = computed(() => {
     name: props.movies.name,
     genre: props.movies.genre,
     synopsis: props.movies.synopsis,
-    imgPath: props.movies.imgPath !== '' ? props.movies.imgPath: './images/newMovie.png'
+    imgPath: props.movies.imgPath !== '' ? props.movies.imgPath : '../images/newMovie.png'
   }
 })
 </script>
