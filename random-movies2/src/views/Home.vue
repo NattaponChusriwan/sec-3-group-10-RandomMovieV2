@@ -35,7 +35,7 @@ const createNewMovie = async (newMovie) => {
     headers: {
       'content-type': 'application/json'
     },
-    body: JSON.stringify({ name: newMovie.name , genre: newMovie.genre , synopsis: newMovie.synopsis, imgPath: newMovie.imgPath })
+    body: JSON.stringify({ name: newMovie.name , genre: newMovie.genre , synopsis: newMovie.synopsis, imgPath: '../images/newMovie.png' })
   })
   if(res.status === 201) {
     const addedMovie = await res.json()
@@ -62,7 +62,7 @@ const updateMovie = async (editingMovie) => {
     headers:{
       'content-type' : 'application/json'
     },
-    body: JSON.stringify({ name: editingMovie.name, genre: editingMovie.genre, synopsis: editingMovie.synopsis })
+    body: JSON.stringify({ name: editingMovie.name, genre: editingMovie.genre, imgPath: editingMovie.imgPath, synopsis: editingMovie.synopsis })
   })
 
   if (res.status === 200) {

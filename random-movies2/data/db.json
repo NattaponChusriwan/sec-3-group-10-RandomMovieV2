@@ -1,11 +1,11 @@
 {
   "movies": [
     {
-      "id": 1,
       "name": "Dont look up",
       "genre": "Comedy",
       "imgPath": "./images/001.jpg",
-      "synopsis": "Two rather low-level astronomers discover a comet is headed directly toward Earth, with the object set to smash into our little planet in six months."
+      "synopsis": "Two rather low-level astronomers discover a comet is headed directly toward Earth, with the object set to smash into our little planet in six months.",
+      "id": 1
     },
     {
       "id": 2,
@@ -15,11 +15,11 @@
       "synopsis": "The story of a 21-year-old college student, Anastasia, who begins a relationship with a 27-year-old successful, powerful businessman named Christian Grey."
     },
     {
-      "id": 3,
       "name": "Flower of Evil",
       "genre": "K-Drama",
       "imgPath": "./images/003.jpg",
-      "synopsis": "Baek Hee-sung is a man who hides his identity and past from his wife Cha Ji-won, a detective. On the surface, they appear to be the perfect family: a loving couple with a beautiful daughter who adores her parents. Cha Ji-won and her colleagues begin investigating a series of unexplained murders and is confronted with the reality that her seemingly perfect husband may be hiding something from her."
+      "synopsis": "Baek Hee-sung is a man who hides his identity and past from his wife Cha Ji-won, a detective. On the surface, they appear to be the perfect family: a loving couple with a beautiful daughter who adores her parents. Cha Ji-won and her colleagues begin investigating a series of unexplained murders and is confronted with the reality that her seemingly perfect husband may be hiding something from her.",
+      "id": 3
     },
     {
       "id": 4,
@@ -43,11 +43,11 @@
       "synopsis": "The series revolves around two doctors from extreme backgrounds, who have complete opposite personalities and medical skills."
     },
     {
-      "id": 7,
       "name": "Green Book",
       "genre": "Drama",
       "imgPath": "./images/007.jpg",
-      "synopsis": "Dr.Don Shirley is a African-American pianist who is about to embark on a concert tour in the Deep South in 1962. In need of a driver and protection, Shirley recruits Tony Lip. Despite their differences, the two men soon develop an unexpected bond while confronting racism and danger in an era of segregation."
+      "synopsis": "Dr.Don Shirley is a African-American pianist who is about to embark on a concert tour in the Deep South in 1962. In need of a driver and protection, Shirley recruits Tony Lip. Despite their differences, the two men soon develop an unexpected bond while confronting racism and danger in an era of segregation.",
+      "id": 7
     },
     {
       "name": "Inside Out",
@@ -114,9 +114,17 @@
     },
     {
       "name": "เทพโคตร",
-      "genre": "007",
+      "genre": "Drama",
+      "imgPath": "../images/newMovie.png",
       "synopsis": "Dr.Don Shirley is a African-American pianist who is about to embark on a concert tour in the Deep South in 1962. In need of a driver and protection, Shirley recruits Tony Lip. Despite their differences, the two men soon develop an unexpected bond while confronting racism and danger in an era of segregation.",
       "id": 17
+    },
+    {
+      "name": "meowza กู้โลก",
+      "genre": "Animation",
+      "synopsis": "meow meow meow",
+      "imgPath": "../images/newMovie.png",
+      "id": 18
     }
   ],
   "questions": [
