@@ -35,7 +35,7 @@ const createNewMovie = async (newMovie) => {
     headers: {
       'content-type': 'application/json'
     },
-    body: JSON.stringify({ name: newMovie.name , genre: newMovie.genre , synopsis: newMovie.synopsis, imgPath: '../images/newMovie.png' })
+    body: JSON.stringify({ name: newMovie.name , genre: newMovie.genre , synopsis: newMovie.synopsis, imgPath:'../images/newMovie.png' })
   })
   if(res.status === 201) {
     const addedMovie = await res.json()
@@ -77,10 +77,16 @@ const updateMovie = async (editingMovie) => {
   closeForm()
 }
 
+const goto = (refName) => {
+      const element = this.$refs[refName];
+      const top = element.offsetTop;
+      window.scrollTo(0, top);
+}
+
 </script>
  
 <template>
-<div>
+<div class="div" ref="div1">
   <add-edit-movie 
    @addMovie="createNewMovie" :movies="newestMovie" @updateMovie="updateMovie"/>
   <div id="cards-recommend" class="grid grid-cols-1 gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2" >
@@ -100,5 +106,9 @@ const updateMovie = async (editingMovie) => {
   background-image: url("../assets/header-movies.jpeg");
   background-size: cover;
   height: 400px;
+}
+.div {
+  height: 1000px;
+  padding: 20px;
 }
 </style>

@@ -99,11 +99,11 @@
       "synopsis": "Widely regarded as one of the greatest films of all time, this mob drama, based on Mario Puzo is novel of the same name, focuses on the powerful Italian-American crime family of Don Vito Corleone . "
     },
     {
-      "id": 15,
       "name": "The Mitchells vs the Machines",
       "genre": "Animation",
       "imgPath": "./images/015.jpg",
-      "synopsis": "A quirky, dysfunctional family is road trip is upended when they find themselves in the middle of the robot apocalypse and suddenly become humanity is unlikeliest last hope"
+      "synopsis": "A quirky, dysfunctional family is road trip is upended when they find themselves in the middle of the robot apocalypse and suddenly become humanity is unlikeliest last hope",
+      "id": 15
     },
     {
       "id": 16,
@@ -121,9 +121,9 @@
     },
     {
       "name": "meowza กู้โลก",
-      "genre": "Animation",
-      "synopsis": "meow meow meow",
+      "genre": "Action",
       "imgPath": "../images/newMovie.png",
+      "synopsis": "meow meow meow",
       "id": 18
     }
   ],

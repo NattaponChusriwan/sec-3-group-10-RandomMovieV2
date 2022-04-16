@@ -9,11 +9,14 @@ defineProps({
 })
 const selectedMovies = ref ([])
 
+const scrollup = () => {
+      window.scrollTo(0,100);
+}
 </script>
 
 <template>
-      <div id="each-card" class="rounded-lg shadow-lg bg-white max-w-sm">
-        <input type="checkbox" class="hidden" :id="movie.id" :name="movie.name" :value="movie" v-model="selectedMovies" />
+         <div id="each-card" class="rounded-lg shadow-lg bg-white max-w-sm">
+           <input type="checkbox" class="hidden" :id="movie.id" :name="movie.name" :value="movie" v-model="selectedMovies" />
     <label :for="movie.id">
           <img class="rounded-t-lg" :src="movie.imgPath" :alt="movie.id"  />
       <div id="card-content" class="p-6">
@@ -27,7 +30,7 @@ const selectedMovies = ref ([])
         </h5>
       </div>
     </label>
-    <button @click="$emit('editMovie', movie)" class="ml-4  text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Edit</button>
+    <button @click="$emit('editMovie', movie); scrollup();" class="ml-4  text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Edit</button>
     <button @click="$emit('deleteMovie', movie.id)" class="text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Delete</button>
   </div>
 </template>
@@ -80,4 +83,5 @@ label::before {
   background-color: red;
   transform: scale(1);
 }
+
 </style>
