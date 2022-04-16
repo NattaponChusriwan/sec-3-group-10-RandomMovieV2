@@ -9,7 +9,7 @@ defineProps({
 })
 const selectedMovies = ref ([])
 
-const scrollup = () => {
+const scrollUp = () => {
       window.scrollTo(0,100);
 }
 </script>
@@ -30,7 +30,7 @@ const scrollup = () => {
         </h5>
       </div>
     </label>
-    <button @click="$emit('editMovie', movie); scrollup();" class="ml-4  text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Edit</button>
+    <button @click="$emit('editMovie', movie); scrollUp();" class="ml-4  text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Edit</button>
     <button @click="$emit('deleteMovie', movie.id)" class="text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Delete</button>
   </div>
 </template>

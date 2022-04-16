@@ -3,7 +3,7 @@ import { ref , onBeforeMount } from 'vue'
 import MovieList from '../components/BaseMovieList.vue';
 import AddEditMovie from '../components/AddEditMovie.vue';
 const movies = ref([])
-
+const selectedGenre = ref('')
 
 // GET
 const getMovies = async () => {
@@ -50,8 +50,6 @@ const closeForm = () => {
 }
 
 //PUT
-
-
 const editMode = (editMovie) => {
   newestMovie.value = editMovie
 }
@@ -77,16 +75,18 @@ const updateMovie = async (editingMovie) => {
   closeForm()
 }
 
-const goto = (refName) => {
-      const element = this.$refs[refName];
-      const top = element.offsetTop;
-      window.scrollTo(0, top);
+const filterGenre = async () => {
+  if (selectedGenre !== '') {
+    movies.value = movies.value.filter((movie) => movie.genre === selectedGenre.value) 
+  } else {
+    await getMovies()
+  }
 }
 
 </script>
  
 <template>
-<div class="div" ref="div1">
+<div>
   <add-edit-movie 
    @addMovie="createNewMovie" :movies="newestMovie" @updateMovie="updateMovie"/>
   <div id="cards-recommend" class="grid grid-cols-1 gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2" >
