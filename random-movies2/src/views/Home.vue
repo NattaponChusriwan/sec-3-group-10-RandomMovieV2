@@ -4,7 +4,6 @@ import MovieList from '../components/BaseMovieList.vue';
 import AddEditMovie from '../components/AddEditMovie.vue';
 const movies = ref([])
 
-
 // GET
 const getMovies = async () => {
   const res = await fetch('http://localhost:5000/movies')
@@ -50,8 +49,6 @@ const closeForm = () => {
 }
 
 //PUT
-
-
 const editMode = (editMovie) => {
   newestMovie.value = editMovie
 }
@@ -73,20 +70,13 @@ const updateMovie = async (editingMovie) => {
     : movie
     )
   } else console.log('error, cannot be added')
-
   closeForm()
-}
-
-const goto = (refName) => {
-      const element = this.$refs[refName];
-      const top = element.offsetTop;
-      window.scrollTo(0, top);
 }
 
 </script>
  
 <template>
-<div class="div" ref="div1">
+<div>
   <add-edit-movie 
    @addMovie="createNewMovie" :movies="newestMovie" @updateMovie="updateMovie"/>
   <div id="cards-recommend" class="grid grid-cols-1 gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2" >

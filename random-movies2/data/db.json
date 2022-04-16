@@ -78,11 +78,11 @@
       "synopsis": "A struggling jazz pianist and an aspiring actress, respectively, who meet and fall in love while pursuing their dreams in Los Angeles."
     },
     {
-      "id": 12,
       "name": "Love and Leashes",
       "genre": "Romantic",
       "imgPath": "./images/012.jpg",
-      "synopsis": "Depicts a romance between Ji-hoo, who has everything perfect but has secret BDSM desires, and Ji-woo, a competent public relations team member who finds out about his secret."
+      "synopsis": "Depicts a romance between Ji-hoo, who has everything perfect but has secret BDSM desires, and Ji-woo, a competent public relations team member who finds out about his secret.",
+      "id": 12
     },
     {
       "id": 13,
