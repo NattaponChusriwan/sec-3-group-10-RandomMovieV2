@@ -11,11 +11,12 @@ const getQuestions = async () => {
 onBeforeMount(async () => {
   await getQuestions()
 })
+
 const quizCompleted = ref(false)
 const currentQuestion = ref(0)
 const score = computed(() => {
   let value = 0
-  questions.value.map(q => {
+   questions.value.map(q => {
     if (q.selected != null && q.answer == q.selected) {
       value++
     }
@@ -38,6 +39,7 @@ const NextQuestion = () => {
     quizCompleted.value = true
   }
 }
+
 </script>
 
 <template>
@@ -46,7 +48,7 @@ const NextQuestion = () => {
     <section class="quiz" v-if="!quizCompleted" >
       <div class="quiz-info">
         <span class="question">{{ getCurrentQuestion.question }}</span>
-        <span class="score">Score {{ score }}/{{ questions.length }}</span>
+        <span class="score"> Score {{ score }}/{{ questions.length }}</span>
       </div>
 
       <div class="options">
@@ -90,9 +92,35 @@ const NextQuestion = () => {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+
+}
+.container {
+  display: flex;
+	flex-direction: column;
+	align-items: center;
   text-align: center;
+	padding: 2rem;
+	height: 100vh;
 }
 
+.quiz {
+	padding: 1rem;
+	width: 100%;
+	max-width: 640px;
+}
+.quiz-info {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+.quiz-info .question {
+	color: #8F8F8F;
+	font-size: 1.25rem;
+}
+.quiz-info.score {
+	color: #FFF;
+	font-size: 1.25rem;
+}
 .options {
   margin-bottom: 1rem;
 }
@@ -147,5 +175,8 @@ button {
 
 button:disabled {
   opacity: 0.5;
+}
+h1 {
+  font-size: 2rem;
 }
 </style>

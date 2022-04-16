@@ -1,5 +1,5 @@
 <script setup>
-import  { ref } from 'vue'
+import BaseButton from './BaseButton.vue'
 defineEmits(['deleteMovie', 'editMovie'])
 defineProps({
     movie: {
@@ -7,20 +7,17 @@ defineProps({
         require: true
     }
 })
-const selectedMovies = ref ([])
 
-const scrollup = () => {
+const scrollUp = () => {
       window.scrollTo(0,100);
 }
 </script>
 
 <template>
-         <div id="each-card" class="rounded-lg shadow-lg bg-white max-w-sm">
-           <input type="checkbox" class="hidden" :id="movie.id" :name="movie.name" :value="movie" v-model="selectedMovies" />
-    <label :for="movie.id">
-          <img class="rounded-t-lg" :src="movie.imgPath" :alt="movie.id"  />
+  <div id="each-card" >
+    <img class="rounded-t-lg" :src="movie.imgPath" :alt="movie.id"  />
       <div id="card-content" class="p-6">
-        <h5 class="text-black text-xl font-medium mb-2">
+        <h5 class="text-black text-xl font-medium mb-2 ">
           {{ movie.name }}
           <div class="scroll">
             <p class="text-blac text-base font-medium mb-2">
@@ -29,9 +26,14 @@ const scrollup = () => {
           </div>
         </h5>
       </div>
-    </label>
-    <button @click="$emit('editMovie', movie); scrollup();" class="ml-4  text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Edit</button>
-    <button @click="$emit('deleteMovie', movie.id)" class="text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-black active:bg-red-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Delete</button>
+    <base-button 
+    buttonName = 'Edit'
+    @click="$emit('editMovie', movie); scrollUp();"
+    />
+    <base-button 
+    buttonName = 'Delete'
+    @click="$emit('deleteMovie', movie.id)"
+    />
   </div>
 </template>
  
@@ -46,42 +48,6 @@ const scrollup = () => {
   width: 100%;
   height: 650px;
   object-fit: cover;
-}
-label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-label::before {
-  content: ' ';
-  display: block;
-  border-radius: 50%;
-  border: 1px solid red;
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  line-height: 28px;
-  transition-duration: 0.4s;
-  transform: scale(0);
-}
-:checked + label {
-  border-color: red;
-  border-width: 3px;
-  border-radius: 0.275rem;
-}
-:checked + label::before {
-  content: '✓';
-  background-color: red;
-  transform: scale(1);
 }
 
 </style>
