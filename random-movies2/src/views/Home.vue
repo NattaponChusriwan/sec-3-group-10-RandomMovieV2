@@ -2,12 +2,13 @@
 import { ref , onBeforeMount, computed } from 'vue'
 import MovieList from '../components/BaseMovieList.vue'
 import AddEditMovie from '../components/AddEditMovie.vue'
-import IconsFiltering from '../components/SystemUiconsFiltering.vue'
-import IconsAdding from '../components/IcOutlineNoteAdd.vue'
+import IconsFiltering from '../components/FilterIcons.vue'
+import IconsAdding from '../components/AddIcons.vue'
 import BaseButton from '../components/BaseButton.vue'
 import RandomResult from '../components/RandomResult.vue'
 
 const movies = ref([])
+const reviews = ref([])
 const selectedMovies = ref ([])
 const selectedGenre = ref('All')
 const clickAddingIcon = ref(false)
@@ -26,6 +27,16 @@ onBeforeMount(async () => {
   await getMovies()
 })
 
+const getReviews = async () => {
+  const res = await fetch('http://localhost:5000/reviews')
+  if (res.status === 200) {
+    reviews.value = await res.json()
+  } else console.log('error, cannot get data')
+}
+onBeforeMount(async () => {
+  await getReviews()
+})
+
 // DELETE
 const removeMovie = async (deleteMovieId) => {
   const res = await fetch(`http://localhost:5000/movies/${deleteMovieId}`, {
@@ -33,6 +44,16 @@ const removeMovie = async (deleteMovieId) => {
   })
   if (res.status === 200) {
     movies.value = movies.value.filter((movie) => movie.id !== deleteMovieId)
+    console.log('deleted successfully')
+  } else console.log('error, cannot delete data')
+}
+
+const removeReview = async (deleteReviewId) => {
+  const res = await fetch(`http://localhost:5000/reviews/${deleteReviewId}`, {
+    method: 'DELETE'
+  })
+  if (res.status === 200) {
+    reviews.value = reviews.value.filter((review) => review.id !== deleteReviewId)
     console.log('deleted successfully')
   } else console.log('error, cannot delete data')
 }
@@ -60,8 +81,29 @@ const closeForm = () => {
   clickAddingIcon.value = false
 }
 
+const newestReview = ref({})
+const createNewReview = async (newReview) => {
+  const res = await fetch('http://localhost:5000/reviews', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({ movieId: newReview.movieId , review: newReview.review })
+  })
+  if(res.status === 201) {
+    const addedReview = await res.json()
+    reviews.value.push(addedReview)
+    alert('added successfully')
+  } else console.log('error, cannot added')
+  newestReview.value = {}
+}
+
+const cancelReview = () => {
+  newestReview.value = {}
+}
+
 //PUT
-const editMode = (editMovie) => {
+const editMovieMode = (editMovie) => {
   newestMovie.value = editMovie
   clickAddingIcon.value = true
 }
@@ -84,6 +126,30 @@ const updateMovie = async (editingMovie) => {
     )
   } else console.log('error, cannot be added')
   closeForm()
+}
+
+const editReviewMode = (editReview) => {
+  newestReview.value = editReview
+}
+
+const updateReview = async (editingReview) => {
+  const res = await fetch(`http://localhost:5000/reviews/${editingReview.id}`, {
+    method: 'PUT',
+    headers:{
+      'content-type' : 'application/json'
+    },
+    body: JSON.stringify({ movieId: editingReview.movieId, review: editingReview.review })
+  })
+
+  if (res.status === 200) {
+    const editedReview = await res.json()
+    reviews.value = reviews.value.map((review) => 
+    review.id === editedReview.id 
+    ? {...review, movieId: editedReview.movieId, review: editedReview.review} 
+    : review
+    )
+  } else console.log('error, cannot be added')
+  cancelReview()
 }
 
 const isAddingIconClick = () => {
@@ -119,6 +185,10 @@ const filterGenre = computed(() => {
     return movies.value.filter((movie) => movie.genre === selectedGenre.value)
   }
 })
+
+const filterReview = (movieId) => {
+  return reviews.value.filter((review) => review.movieId === movieId)
+}
 
 const randomMovie = () => {
   if (selectedMovies.value.length !== 0) {
@@ -192,8 +262,15 @@ const closeModal = (e) => {
       <label :for="filter.id">
         <movie-list
           :movie = "filter"
-          @editMovie="editMode"
+          :reviews = "filterReview(filter.id)"
+          :editNewReview = "newestReview"
+          @editMovie="editMovieMode"
           @deleteMovie="removeMovie"
+          @deleteReview="removeReview"
+          @editReview="editReviewMode"
+          @cancel="cancelReview"
+          @updateReview="updateReview"
+          @addReview="createNewReview"
         />
       </label>
     </div>
