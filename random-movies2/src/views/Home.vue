@@ -61,19 +61,23 @@ const removeReview = async (deleteReviewId) => {
 //POST
 const newestMovie = ref({})
 const createNewMovie = async (newMovie) => {
-  const res = await fetch('http://localhost:5000/movies', {
+  if (newMovie.name === undefined || newMovie.genre === undefined) {
+    alert('please insert Movie Name and Genre')
+  } else {
+    const res = await fetch('http://localhost:5000/movies', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
     },
     body: JSON.stringify({ name: newMovie.name , genre: newMovie.genre , synopsis: newMovie.synopsis, imgPath:'../images/newMovie.gif' })
-  })
-  if(res.status === 201) {
+    })
+    if(res.status === 201) {
     const addedMovie = await res.json()
     movies.value.push(addedMovie)
-    alert('added successfully')
-  } else console.log('error, cannot added')
-  newestMovie.value = {}
+    alert('Added Successfully')
+    } else ('error, cannot added')
+    newestMovie.value = {}
+  }
 }
 
 const closeForm = () => {
@@ -83,21 +87,24 @@ const closeForm = () => {
 
 const newestReview = ref({})
 const createNewReview = async (newReview) => {
-  const res = await fetch('http://localhost:5000/reviews', {
+  if (newReview.review === undefined ) {
+    alert('please insert Review')
+  } else {
+    const res = await fetch('http://localhost:5000/reviews', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
     },
     body: JSON.stringify({ movieId: newReview.movieId , review: newReview.review })
-  })
-  if(res.status === 201) {
-    const addedReview = await res.json()
-    reviews.value.push(addedReview)
-    alert('added successfully')
-  } else console.log('error, cannot added')
-  newestReview.value = {}
+    })
+    if(res.status === 201) {
+      const addedReview = await res.json()
+      reviews.value.push(addedReview)
+      alert('Post Successfully')
+    } else console.log('error, cannot added')
+    newestReview.value = {}
+  }
 }
-
 const cancelReview = () => {
   newestReview.value = {}
 }
@@ -109,65 +116,54 @@ const editMovieMode = (editMovie) => {
 }
 
 const updateMovie = async (editingMovie) => {
-  const res = await fetch(`http://localhost:5000/movies/${editingMovie.id}`, {
+  if (editingMovie.name === "" ) {
+    alert('please insert Movie Name and Genre')
+  } else {
+    const res = await fetch(`http://localhost:5000/movies/${editingMovie.id}`, {
     method: 'PUT',
     headers:{
       'content-type' : 'application/json'
     },
     body: JSON.stringify({ name: editingMovie.name, genre: editingMovie.genre, imgPath: editingMovie.imgPath, synopsis: editingMovie.synopsis })
-  })
+    })
 
-  if (res.status === 200) {
-    const editedMovie = await res.json()
-    movies.value = movies.value.map((movie) => 
-    movie.id === editedMovie.id 
-    ? {...movie, name: editedMovie.name, genre: editedMovie.genre, synopsis: editedMovie.synopsis} 
-    : movie
-    )
-  } else console.log('error, cannot be added')
-  closeForm()
+    if (res.status === 200) {
+      const editedMovie = await res.json()
+      movies.value = movies.value.map((movie) => 
+      movie.id === editedMovie.id 
+      ? {...movie, name: editedMovie.name, genre: editedMovie.genre, synopsis: editedMovie.synopsis} 
+      : movie
+      )
+    } else console.log('error, cannot be added')
+    closeForm()
+  }
 }
-
 const editReviewMode = (editReview) => {
   newestReview.value = editReview
 }
 
 const updateReview = async (editingReview) => {
-  const res = await fetch(`http://localhost:5000/reviews/${editingReview.id}`, {
+  if (editingReview.name === "" ) {
+    alert('please insert Review')
+  } else {
+    const res = await fetch(`http://localhost:5000/reviews/${editingReview.id}`, {
     method: 'PUT',
     headers:{
       'content-type' : 'application/json'
     },
     body: JSON.stringify({ movieId: editingReview.movieId, review: editingReview.review })
-  })
-
-  if (res.status === 200) {
-    const editedReview = await res.json()
-    reviews.value = reviews.value.map((review) => 
-    review.id === editedReview.id 
-    ? {...review, movieId: editedReview.movieId, review: editedReview.review} 
-    : review
-    )
-  } else console.log('error, cannot be added')
-  cancelReview()
-}
-
-const isAddingIconClick = () => {
-  if (clickAddingIcon.value === false) {
-    clickAddingIcon.value = true
-  } else {
-    clickAddingIcon.value = false
+    })
+    if (res.status === 200) {
+      const editedReview = await res.json()
+      reviews.value = reviews.value.map((review) => 
+      review.id === editedReview.id 
+      ? {...review, movieId: editedReview.movieId, review: editedReview.review} 
+      : review
+      )
+    } else console.log('error, cannot be added')
+    cancelReview()
   }
 }
-
-const isSelctGenreIconClick = () => {
-  if (clickSelectGenreIcon.value === false) {
-    clickSelectGenreIcon.value = true
-  } else {
-    clickSelectGenreIcon.value = false
-  }
-}
-
 const sortGenre = computed(() => {
   const sortedGenre = movies.value.reduce((previous, current) => {
     previous[current.genre] = current
@@ -210,29 +206,45 @@ const closeModal = (e) => {
   isModal.value = e
 }
 
+const resetSelected = () => {
+  selectedMovies.value.length = 0
+}
+
 </script>
  
 <template>
-<div>
-    <span  class="text-4xl font-bold">Movie Lists</span>
-    <span class="flex justify-end"> 
+<div class="mx-20">
+  <div class="mt-4 flex justify-between">
+    <span class="text-4xl font-bold font">Movie Lists</span>
+    <span>
       <base-button
         buttonName = 'Random'
         @click="randomMovie"
       />
+      <base-button
+        buttonName = 'Reset'
+        @click="resetSelected"
+        v-show="selectedMovies.length !== 0 "
+      />
     </span>
-    <hr>
   </div>
-  <div class="flex justify-end">
-    <icons-adding @click="isAddingIconClick"/>
-    <icons-filtering @click="isSelctGenreIconClick"/>
+  <hr>
+  <div class="flex justify-end content-center">
+    <span @click="clickAddingIcon = !clickAddingIcon" class="mt-3 mb-3 inline-flex items-center font-bold">
+      <span style="cursor: pointer;" >Add Movie</span>
+      <icons-adding class="ml-2"/>
+    </span>
+    <span @click="clickSelectGenreIcon = !clickSelectGenreIcon" class="mt-3 ml-5 mb-3 inline-flex items-center font-bold">
+      <span style="cursor: pointer;">More Filter</span>
+      <icons-filtering class="ml-2"/>
+    </span>
   </div>
-  <div v-show="clickSelectGenreIcon">
-    <h1>Select Genre</h1>
-    <select id="select-bar" v-model="selectedGenre" class="select">
-    <option option value="All">All recommended</option>
-    <option v-for="movieGenre in sortGenre" :key="movieGenre.id">
-      {{ movieGenre.genre }}
+  <div v-show="clickSelectGenreIcon" class="flex justify-end ">
+    <h1 class="text-3xl font-bold mt-3 mb-3 mr-4">Select Genre</h1>
+    <select id="select-bar" v-model="selectedGenre" class="select ml-4 mb-6 mt-3 bg-transparent text-red-500">
+    <option option value="All" class="bg-black text-red-500 ">All</option>
+    <option v-for="movieGenre in sortGenre" :key="movieGenre.id" class="bg-black text-red-500" >
+      {{ movieGenre.genre }} 
     </option>
     </select>
   </div>
@@ -255,10 +267,10 @@ const closeModal = (e) => {
   </div>
   <!-- End Show result -->
 
-  <div id="cards-recommend" class="grid grid-cols-1 gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2" >
+  <div id="cards-recommend" class="grid grid-cols-1 gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2  mb-20 mt-4" >
     <!-- Show Movies -->
-     <div v-for="filter in filterGenre" :key="filter.id" id="each-card" class="rounded-lg shadow-lg bg-white max-w-sm">
-      <input type="checkbox" class="hidden" :id="filter.id" :name="filter.name" :value="filter" v-model="selectedMovies" />
+     <div v-for="filter in filterGenre" :key="filter.id" id="each-card" class="rounded-lg shadow-lg max-w-sm">
+      <input type="checkbox" class="hidden" :id="filter.id" :name="filter.name" :value="filter" v-model="selectedMovies"   />
       <label :for="filter.id">
         <movie-list
           :movie = "filter"
@@ -275,9 +287,21 @@ const closeModal = (e) => {
       </label>
     </div>
   </div>
+</div>
+
 </template>
  
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+.selectgenre {
+  font-family: "Kanit", sans-serif;
+  color: red;
+}
+
+  * {
+    font-family: "Kanit", sans-serif;
+  }
 /* header */
 
 #header {

@@ -11,10 +11,10 @@ defineProps({
 <div class="modal-mask">
     <div class="modal-wrapper">
         <div class="modal-container">
-            <div class="modal-header">
+            <div class="modal-header text-lg font-bold" >
                 <h3>Random Result: {{ movie.name }}</h3>
             </div>
-            <div class="modal-body">
+            <div class="modal-body ">
                 <img :src="movie.imgPath" :alt="movie.id">
             </div>
             <div class="modal-button text-black flex justify-end">
@@ -27,6 +27,10 @@ defineProps({
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+* {
+  font-family: "Kanit", sans-serif;
+}
 .modal-mask {
     position: fixed;
     z-index: 9998;
@@ -48,7 +52,7 @@ defineProps({
     width: 400px;
     margin: 0px auto;
     padding: 20px 30px;
-    background-color: #fff;
+    background-color: rgb(0, 0, 0);
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
 }

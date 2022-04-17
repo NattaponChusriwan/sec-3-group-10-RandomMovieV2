@@ -1,5 +1,6 @@
 <script setup>
-import { computed , ref } from 'vue'
+import { computed } from 'vue'
+import BaseButton from '../components/BaseButton.vue'
 defineEmits(['updateMovie', 'addMovie' , 'close'])
 const props = defineProps({
   movies: {
@@ -7,7 +8,6 @@ const props = defineProps({
     default: {}
   }
 })
-
 
 const newMovie = computed(() => {
   return {
@@ -18,15 +18,15 @@ const newMovie = computed(() => {
     imgPath: props.movies.imgPath 
   }
 })
-
+ 
 </script>
  
 <template>
 <div>
-  <h1 class="text-3xl font-bold	">Add Movie</h1>
-  <p>Movie name: <input type="text" class="border-2 border-yellow-500 text-black ml-1 mt-2	" v-model="newMovie.name"></p>
-  <p>Genre: <select  class="border-2 border-yellow-500 text-black ml-12 mt-2	" v-model="newMovie.genre">
-  <option disabled value="" >Please select one</option>
+  <h1 class="text-3xl font-bold mb-3	">Add Movie</h1>
+  <p>Movie name : <input type="text" class="border-2 border-red-500 text-black ml-1 mt-2	" v-model="newMovie.name" ></p>
+  <p>Genre : <select  class="border-2 border-red-500 text-black ml-12 mt-2	" v-model="newMovie.genre" >
+  <option disabled >Please select one</option>
   <option>Action</option>
   <option>Animation</option>
   <option>Comedy</option>
@@ -40,20 +40,36 @@ const newMovie = computed(() => {
   </p>
     <div class="div-containter-input">
       <div class="div-input">
-        <label class="mt-1">Synopsis :</label>
+        <label class="mt-1 ">Synopsis :</label>
        <textarea cols="100" rows="10" placeholder="input your synopsis here..." type="text" 
-       class="border-2 border-yellow-500 text-black ml-7  mt-2	" v-model="newMovie.synopsis">
+       class="border-2 border-red-500 text-black ml-7  mt-2	" v-model="newMovie.synopsis" >
           </textarea>
           </div> 
           </div>
-  
-  <button v-if="newMovie.id > 0" @click="$emit('updateMovie', newMovie)" class="text-yellow-500 bg-transparent border border-solid border-yellow-500 hover:bg-yellow-500 hover:text-black active:bg-yellow-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Save</button>
-  <button v-else @click="$emit('addMovie', {name: newMovie.name, genre: newMovie.genre, synopsis: newMovie.synopsis, imgPath: newMovie.imgPath})" class="text-yellow-500 bg-transparent border border-solid border-yellow-500 hover:bg-yellow-500 hover:text-black active:bg-yellow-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Add</button>
-  <button @click="$emit('close')" class="text-yellow-500 bg-transparent border border-solid border-yellow-500 hover:bg-yellow-500 hover:text-black active:bg-yellow-600 font-bold uppercase text-sm py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 active show px-3">Close</button>
+   <div class="mt-5 ml-24 mb-4">
+     <base-button
+        buttonName = 'Save'
+        @click="$emit('updateMovie', newMovie)"
+        v-if="newMovie.id > 0"
+      />
+     <base-button
+        buttonName = 'Add'
+        @click="$emit('addMovie', {name: newMovie.name, genre: newMovie.genre, synopsis: newMovie.synopsis, imgPath: newMovie.imgPath})"
+        v-else
+      />
+      <base-button
+        buttonName = 'Close'
+        @click="$emit('close')"
+      />
+   </div>
 </div>
 </template>
  
-<style >
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+* {
+  font-family: "Kanit", sans-serif;
+}
 .div-contatiner-input {
   display: flex;
   flex-direction: column;

@@ -18,7 +18,7 @@
       "name": "Flower of Evil",
       "genre": "K-Drama",
       "imgPath": "./images/003.jpg",
-      "synopsis": "Baek Hee-sung is a man who hides his identity and past from his wife Cha Ji-won, a detective. On the surface, they appear to be the perfect family: a loving couple with a beautiful daughter who adores her parents. Cha Ji-won and her colleagues begin investigating a series of unexplained murders and is confronted with the reality that her seemingly perfect husband may be hiding something from her.",
+      "synopsis": "Baek Hee-sung is a man who hides his identity and past from his wife Cha Ji-won, a detective. On the surface, they appear to be the perfect family: a loving couple with a beautiful daughter who adores her parents. Cha Ji-won and her colleagues begin investigating a series of unexplained murders and are confronted with the reality that her seemingly perfect husband may be hiding something from her.",
       "id": 3
     },
     {
@@ -99,11 +99,11 @@
       "synopsis": "Widely regarded as one of the greatest films of all time, this mob drama, based on Mario Puzo is novel of the same name, focuses on the powerful Italian-American crime family of Don Vito Corleone . "
     },
     {
+      "id": 15,
       "name": "The Mitchells vs the Machines",
       "genre": "Animation",
       "imgPath": "./images/015.jpg",
-      "synopsis": "A quirky, dysfunctional family is road trip is upended when they find themselves in the middle of the robot apocalypse and suddenly become humanity is unlikeliest last hope",
-      "id": 15
+      "synopsis": "A quirky, dysfunctional family is road trip is upended when they find themselves in the middle of the robot apocalypse and suddenly become humanity is unlikeliest last hope"
     },
     {
       "id": 16,
@@ -115,72 +115,72 @@
   ],
   "questions": [
     {
-      "question": "ใครหล่อสุดใน 5 คนนี้",
+      "question": "หนังเรื่องนี้ออกฉายปีครั้งแรกในปีอะไร",
+      "image": "./images/014.jpg",
+      "answer": 4,
+      "options": [
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972"
+      ],
+      "selected": null
+    },
+    {
+      "question": "หนังเรื่องนี้ใครเป็นนักแสดงนำ?",
+      "image": "./images/005.jpg",
+      "answer": 1,
+      "options": [
+        "Ryan Gosling",
+        "Ryan Reynolds",
+        "Dwayne Johnson",
+        "Hugh Jackman",
+        "Hugh Grant"
+      ],
+      "selected": null
+    },
+    {
+      "question": "หนังเรื่องนี้ได้รางวัล?",
+      "image": "./images/007.jpg",
       "answer": 3,
       "options": [
-        "แค่ชื่อก็หล่อแล้ว พรี่วาเลนไทน์",
+        "7",
+        "32",
+        "45",
+        "59",
+        "62"
+      ],
+      "selected": null
+    },
+    {
+      "question": "ตัวละครหลักในเรื่องนี้มีชื่อว่าอะไร?",
+      "image": "./images/008.jpg",
+      "answer": 2,
+      "options": [
+        "Linda Smith",
+        "Mary Taylor",
+        "Riley Andersen",
+        "Lily Robert",
+        "Elizabeth Brown"
+      ],
+      "selected": null
+    },
+    {
+      "question": "ใครหล่อสุดใน 5 คนนี้",
+      "image": "./images/q5.jpg",
+      "answer": 3,
+      "options": [
+        "แค่ชื่อก็หล่อแล้ว พรี่ไทน์",
         "เฮ้ยๆ ต้องพรี่แชมป์สิค้าบบบ",
         "ถึงจะผู้หญิงแต่ก็หล่อนะ ต้องพรี่ฟิล์ม",
         "พรี่โอมสิค้าบ หล่อจนใจเจ็บ",
         "อย่าๆๆ ต้องพรี่มายด์ดิ หน้าตาดีเหมือนพระเอกMV แถมแบกวิชานี้"
       ],
       "selected": null
-    },
-    {
-      "question": "สังกัดใดต่อไปนี้ไม่มีนักแข่งสัญชาติไทยอยู่เลย",
-      "answer": 1,
-      "options": [
-        "MITH",
-        "Peper Rex",
-        "Full Sense",
-        "Xerxia",
-        "ไม่ถูกทุกข้อ"
-      ],
-      "selected": null
-    },
-    {
-      "question": "โปรเจ็คนี้นี้เป็นส่วนหนึ่งของวิชาใด?",
-      "answer": 0,
-      "options": [
-        "INT203",
-        "INT204",
-        "INT206",
-        "INT208",
-        "INT210"
-      ],
-      "selected": null
-    },
-    {
-      "question": "นักร้องคน/วงไหนที่เป็นนักร้อง R&B",
-      "answer": 4,
-      "options": [
-        "Ariana Grande",
-        "BTS",
-        "BOWKYLION",
-        "Maroon 5",
-        "The Weeknd"
-      ],
-      "selected": null
-    },
-    {
-      "question": "ในวิชา INT203 อาจารย์มีชื่อว่าอะไร?",
-      "answer": 2,
-      "options": [
-        "อาจารย์สยาม",
-        "อาจารย์สุณิสา",
-        "อาจารย์อุมาพร",
-        "อาจารย์พิเชฏฐ์",
-        "อาจารย์กิตติพันธุ์"
-      ],
-      "selected": null
     }
   ],
   "reviews": [
-    {
-      "movieId": 1,
-      "review": "หนังดี ตลกฮามาก แนะนำเลยยยยย",
-      "id": 1
-    },
     {
       "id": 2,
       "movieId": 16,
@@ -192,11 +192,6 @@
       "review": "เพลง เพราะมาก"
     },
     {
-      "id": 4,
-      "movieId": 3,
-      "review": "เนื้อเรื่องดีมากกกกกกกกกก"
-    },
-    {
       "id": 5,
       "movieId": 4,
       "review": "หัวหน้าน่ารัก"
@@ -205,11 +200,6 @@
       "id": 6,
       "movieId": 5,
       "review": "โครตฮา พระเอกโครตตลก"
-    },
-    {
-      "id": 7,
-      "movieId": 6,
-      "review": "พระเอกหล่อม๊ากกก"
     },
     {
       "id": 8,
@@ -292,11 +282,6 @@
       "review": "นักแสดงทุกคนแสดงดีมาก ๆ เลยอ่ะ ทำให้เราเชื่อได้เลยว่าป่วยกันจริง ๆ รักกันจริง ๆ ผูกพันธ์กันจริง ๆ ปริ่มมาก ดูไปน้ำตาไหลพรากT^T"
     },
     {
-      "id": 24,
-      "movieId": 1,
-      "review": "ดำเนินเรื่องผ่านภาพที่เฉียบสุด ๆ การจัดไฟเอาเรื่องมาก ๆ บทไม่ต้องพูดถึงเลย เป็นหนั’รักที่มีความเป็นชีวิตจริงอยู่สูงมาก ดูแล้วนอกจากจะประทับใจกับการแสดงแล้ว ยังประทับใจกับเพลง การตัดต่อ เรียกได้ว่าคอหนังห้ามพลาดจริง ๆ ไปตามดูเลยค่า"
-    },
-    {
       "id": 25,
       "movieId": 16,
       "review": "ใครชอบหนังรักแนวซึ้ง ๆ ดราม่า ๆ ต้องดูเรื่องนี้เลย เป็นอีกหนึ่งเรื่องที่เป็นแนว coming of age แล้วเขียนบทออกมาได้สวยงามมาก ๆ หลาย ๆ ฉากเรียกน้ำตาได้ดีมาก ทำให้เราได้ทบทวนการมีชีวิตอยู่ อาจจะง่วงนิดนึง แต่คนที่ชอบหนังซึ้งน่าจะถูกใจ"
@@ -309,7 +294,7 @@
     {
       "id": 27,
       "movieId": 13,
-      "review": "เป็นหนังที่ไม่สนุกและไม่น่าประทับใจเอาซะเลย แอ็คชันก็ไม่ดี บทก็ไม่ได้ เห็นการแสดงของตัวเอกแล้วรู้สึกเหนื่อยแทนจริง ๆ นะ ดูแกไม่ไหวแล้วจริง ๆ ใครหวังจะได้เห็นฉากแอ็คชันมันส์ ๆ คงต้องผิดหวังสักหน่อย สิ่งเดียวที่น่าชื่นชมคือความน่ารักเวลาเล่นกับเด็กๆนี่แหละ อยากให้ตัวเอกเรื่องนี้ลองเปลี่ยนแนวไปเป็นหนังดราม่าคอยดูแลหลานหรือหนังคอเมดี้แบบฮา ๆ ตลกหน้าตาย น่าจะฮาไม่ใช่น้อย ไม่ต้องเหนื่อยมากด้วย  "
+      "review": "เป็นหนังที่ไม่สนุกและไม่น่าประทับใจเอาซะเลย แอ็คชันก็ไม่ดี บทก็ไม่ได้ เห็นการแสดงของตัวเอกแล้วรู้สึกเหนื่อยแทนจริง ๆ นะ ดูแกไม่ไหวแล้วจริง ๆ ใครหวังจะได้เห็นฉากแอ็คชันมันส์ ๆ คงต้องผิดหวังสักหน่อย สิ่งเดียวที่น่าชื่นชมคือความน่ารักเวลาเล่นกับเด็กๆนี่แหละ อยากให้ตัวเอกเรื่องนี้ลองเปลี่ยนแนวไปเป็นหนังดราม่าคอยดูแลหลานหรือหนังคอเมดี้แบบฮา ๆ ตลกหน้าตาย น่าจะฮาไม่ใช่น้อย ไม่ต้องเหนื่อยมากด้วย"
     },
     {
       "id": 28,
@@ -327,14 +312,19 @@
       "review": "เป็นหนังรักที่กล้าเล่นประเด็นรักผิดที่ผิดเวลา แต่บทสรุปของเรื่องนี้โดยส่วนตัวเราชอบ คิดว่ามันดี ลงตัวและสมบูรณ์แบบที่สุดเท่าที่จะเป็นไปได้แล้วจริง ๆ  "
     },
     {
-      "id": 31,
-      "movieId": 3,
-      "review": " เราว่าเรื่องนี้ดูสนุก เพลิน บอกเล่าหลายประเด็น สะท้อนสังคมออนไลน์ การเติบโต และครอบครัว ออกมาได้อย่างกลมกล่อมลงตัว หล่อเลี้ยงด้วยบทเพลงอันไพเราะและงานภาพสดงดงาม เชิญไปใช้ตาดูและใช้หูฟังด้วยตัวเองกันเลย นี่เป็นหนังโคตรประทับใจเปิดปีของเราเลย"
-    },
-    {
       "id": 32,
       "movieId": 14,
       "review": "เป็นหนังที่สนุก ดูเพลิน บันเทิงเรื่องนึงเลย ยังคงเสียดายถ้าหนังถูกทำเป็นเรท R เราอาจจะได้เห็นแอ็คชันเถื่อน ๆ หรือซีนโหด ๆ ที่อาจทำให้หนังมันลงตัวกว่านี้ได้ แน่นอนว่ามีภาคต่อชัวร์ ต้องมาลุ้นกันว่าจะดีกว่าภาคนี้มั้ย"
+    },
+    {
+      "movieId": 1,
+      "review": "it's good",
+      "id": 33
+    },
+    {
+      "movieId": 3,
+      "review": "มุนแชวอนน่ารักมากกกกกกกกกกกก",
+      "id": 34
     }
   ]
 }
