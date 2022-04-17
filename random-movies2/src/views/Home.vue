@@ -39,23 +39,31 @@ onBeforeMount(async () => {
 
 // DELETE
 const removeMovie = async (deleteMovieId) => {
-  const res = await fetch(`http://localhost:5000/movies/${deleteMovieId}`, {
+  if (confirm(`Do you want to delete movie-id: ${deleteMovieId} `) == true) {
+    const res = await fetch(`http://localhost:5000/movies/${deleteMovieId}`, {
     method: 'DELETE'
-  })
-  if (res.status === 200) {
-    movies.value = movies.value.filter((movie) => movie.id !== deleteMovieId)
-    console.log('deleted successfully')
-  } else console.log('error, cannot delete data')
+    })
+    if (res.status === 200) {
+      movies.value = movies.value.filter((movie) => movie.id !== deleteMovieId)
+      console.log('deleted successfully')
+    } else console.log('error, cannot delete data')
+  } else {
+    console.log('cancel')
+  }
 }
 
 const removeReview = async (deleteReviewId) => {
-  const res = await fetch(`http://localhost:5000/reviews/${deleteReviewId}`, {
+  if (confirm("Do you want to delete this Review") == true) {
+    const res = await fetch(`http://localhost:5000/reviews/${deleteReviewId}`, {
     method: 'DELETE'
-  })
-  if (res.status === 200) {
-    reviews.value = reviews.value.filter((review) => review.id !== deleteReviewId)
-    console.log('deleted successfully')
-  } else console.log('error, cannot delete data')
+    })
+    if (res.status === 200) {
+      reviews.value = reviews.value.filter((review) => review.id !== deleteReviewId)
+      console.log('deleted successfully')
+    } else console.log('error, cannot delete data')
+  } else {
+    console.log('cancel')
+  }
 }
 
 //POST
@@ -228,7 +236,7 @@ const resetSelected = () => {
       />
     </span>
   </div>
-  <hr>
+  <hr class="border border-solid">
   <div class="flex justify-end content-center">
     <span @click="clickAddingIcon = !clickAddingIcon" class="mt-3 mb-3 inline-flex items-center font-bold">
       <span style="cursor: pointer;" >Add Movie</span>
@@ -256,7 +264,7 @@ const resetSelected = () => {
     @updateMovie="updateMovie"
     @close="closeForm"
     />
-    <hr>
+    <hr class="border border-solid">
   </div>
   
   <!-- Show result -->
@@ -267,8 +275,8 @@ const resetSelected = () => {
   </div>
   <!-- End Show result -->
 
-  <div id="cards-recommend" class="grid grid-cols-1 gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2  mb-20 mt-4" >
-    <!-- Show Movies -->
+  <!-- Show Movies -->
+  <div id="cards-recommend" class="grid grid-cols-1 gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 mb-20 mt-4" >
      <div v-for="filter in filterGenre" :key="filter.id" id="each-card" class="rounded-lg shadow-lg max-w-sm">
       <input type="checkbox" class="hidden" :id="filter.id" :name="filter.name" :value="filter" v-model="selectedMovies"   />
       <label :for="filter.id">

@@ -17,7 +17,7 @@ defineProps({
             <div class="modal-body ">
                 <img :src="movie.imgPath" :alt="movie.id">
             </div>
-            <div class="modal-button text-black flex justify-end">
+            <div class=" text-black flex justify-end">
                 <base-button buttonName='Random' @click="$emit('random')"></base-button>
                 <base-button buttonName='Close' @click="$emit('close', false)">Close</base-button>
             </div>
@@ -64,11 +64,6 @@ defineProps({
 
 .modal-body {
     margin: 20px 0;
-}
-
-.modal-button {
-    display: flex;
-    justify-content: end;
 }
 
 </style>

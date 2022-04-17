@@ -64,7 +64,7 @@ const scrollUp = () => {
         <icons-drop-down class="mr-3"/>
       </button>
     </div>
-    <div v-show="isClick" class="rounded-md m-3">
+    <div v-show="isClick" class="rounded-md mx-3 mt-3">
       <p class="text-black text-xl font-medium mb-2 ">Reviews</p>
       <div class="text-black text-base font-medium mb-2">
         <span>Your Review: </span>
@@ -88,7 +88,7 @@ const scrollUp = () => {
         </div>
       </div>
       <div class="scroll2 ">
-        <p v-for="review in reviews" :key="review.id" class="bg-gray-100 text-black text-base font-medium mb-2 p-2" >
+        <p v-for="review in reviews" :key="review.id" class="bg-gray-100 text-black text-base font-medium mb-2 p2" >
          {{ review.review }}  <br>
           <div class="mt-4">
             <base-button buttonName="Edit" @click="$emit('editReview', review)"/>
