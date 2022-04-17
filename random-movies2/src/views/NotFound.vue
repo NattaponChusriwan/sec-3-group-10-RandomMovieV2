@@ -1,5 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router';
+import BaseButton from '../components/BaseButton.vue';
 
 const appRouter = useRouter()
 const closeModal = () => appRouter.push({name:'Home'})
@@ -9,8 +10,8 @@ const closeModal = () => appRouter.push({name:'Home'})
     <div class="modal-wrapper">
       <div class="modal-container">
         <div class="modal-header"><h3>Page Not Found</h3></div>
-        <div class="modal-button text-black">
-          <button @click="closeModal">Close</button>
+        <div class="modal-button ">
+          <base-button buttonName = "Close" @click="closeModal" class="text-black border-4 border-red-500 mt-4 "/>
         </div>
       </div>
     </div>
@@ -49,6 +50,5 @@ const closeModal = () => appRouter.push({name:'Home'})
 }
 .modal-button {
   display: flex;
-  /* justify-content: end; */
 }
 </style>
