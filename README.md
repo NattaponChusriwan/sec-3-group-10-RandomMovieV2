@@ -26,6 +26,9 @@
 3. คลิ๊ก `CLOSE` เพื่อปิด pop up
 4. หากต้องการจะนำหนังที่เลือกไว้ออก กดที่ปุ่ม `RESET`
 
+:round_pushpin: **More Review ic:baseline-arrow-circle-up** _ผู้ใช้งานสามารถเลือกสุ่มหนังจากที่มีให้_
+### Steps
+
 ## 🎞️ Movie Trivia
 **The Quiz** _เป็นแบบทดสอบเล็กๆน้อยๆให้ผู้ใช้งานได้ทดสอบสมอง_
 ### Steps
