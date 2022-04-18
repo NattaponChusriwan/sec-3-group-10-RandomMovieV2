@@ -44,7 +44,6 @@ const NextQuestion = () => {
 const restart = async () => {
   await getQuestions()
   currentQuestion.value = 0
-  score.value = 0
   quizCompleted.value = false
 }
 </script>

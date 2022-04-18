@@ -23,9 +23,6 @@ const getMovies = async () => {
     movies.value = await res.json()
   } else console.log('error, cannot get data')
 }
-onBeforeMount(async () => {
-  await getMovies()
-})
 
 const getReviews = async () => {
   const res = await fetch('http://localhost:5000/reviews')
@@ -33,7 +30,9 @@ const getReviews = async () => {
     reviews.value = await res.json()
   } else console.log('error, cannot get data')
 }
+
 onBeforeMount(async () => {
+  await getMovies()
   await getReviews()
 })
 
