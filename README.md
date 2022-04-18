@@ -38,7 +38,7 @@
 
 ## 📢จำนวน 4 component
 ### :small_red_triangle: AddEditMovie.vue
-เป็น component `Add Movie +` ที่แก้ไขและเพิ่มรายชื่อหนัง สามารถรับ input __Movie name__ , __Genre__ และ __Synopsis__
+เป็น component `Add Movie/Edit +` ที่แก้ไขและเพิ่มรายชื่อหนัง สามารถรับ input __Movie name__ , __Genre__ และ __Synopsis__
 
 ### :small_red_triangle: BaseButton.vue
 เป็น component ปุ่มที่เป็น base ของ project type เป็น **String**
